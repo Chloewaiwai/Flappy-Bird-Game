@@ -4,6 +4,25 @@
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+.container{
+    background: rgb(67,75,145);
+    background: linear-gradient(180deg, rgba(146,134,209,1) 0%, rgba(67,58,112,1) 36%, rgba(1,46,162,1) 100%);    height: 100%;
+    width: 100%;
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container h1{
+    position: absolute;
+    top:1.5rem;
+    left: 20rem;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(54, 113, 173)  0px 22px 70px 4px;
+
+}
+
 .background {
 	height: 100vh;
 	width: 100vw;
@@ -11,7 +30,12 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    height: 80vh;
+    width: 80vw;
+    border: 4px solid rgb(255, 255, 255);
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgb(54, 113, 173)  0px 22px 70px 4px;
 }
 .bird {
 	height: 100px;
@@ -27,12 +51,10 @@
 	top: 40vh;
 	left: 100vw;
 	height: 70vh;
-	width: 6vw;
-	background:radial-gradient(lightgreen 50%, green);
-	border: 5px solid black;
-	background-image: url('images/stone pillar.svg') ;
-	background-position: center;
-	background-size: 300px;
+	width: 10vw;
+	background-image: url('images/rock.png') ;
+	background-position:center;
+	background-size:cover;
 	background-repeat: no-repeat;
 
 }
