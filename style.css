@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+	overflow: hidden;
 }
 .container h1{
     position: absolute;
@@ -24,8 +25,6 @@
 }
 
 .background {
-	height: 100vh;
-	width: 100vw;
 	background: url('images/background.svg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -48,12 +47,12 @@
 }
 .pipe_sprite {
 	position: fixed;
-	top: 40vh;
+	top: 10.5vh;
 	left: 100vw;
-	height: 70vh;
+	height: 30vh;
 	width: 10vw;
 	background-image: url('images/rock.png') ;
-	background-position:center;
+	background-position:bottom;
 	background-size:cover;
 	background-repeat: no-repeat;
 
