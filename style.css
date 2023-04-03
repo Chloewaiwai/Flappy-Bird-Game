@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Courier Prime', monospace;
 }
 
 .container{
@@ -18,7 +21,7 @@
 .container h1{
     position: absolute;
     top:1.5rem;
-    left: 20rem;
+    left: 15vw;
     color: rgb(255, 255, 255);
     text-shadow: rgb(54, 113, 173)  0px 22px 70px 4px;
 
@@ -37,22 +40,19 @@
     box-shadow: rgb(54, 113, 173)  0px 22px 70px 4px;
 }
 .bird {
-	height: 100px;
-	width: 130px;
+	height: 120px;
+	width: 160px;
 	position: fixed;
 	top: 40vh;
 	left: 30vw;
 	z-index: 100;
-	border: 5px solid black;
 }
 .pipe_sprite {
 	position: fixed;
-	top: 10.5vh;
 	left: 100vw;
 	height: 30vh;
-	width: 10vw;
+	width: 6vw;
 	background-image: url('images/rock.png') ;
-	background-position:bottom;
 	background-size:cover;
 	background-repeat: no-repeat;
 
@@ -63,45 +63,34 @@
 	position: absolute;
 	z-index: 10;
 	color: black;
-	top: 30%;
+	top: 50vh;
 	left: 50%;
-	font-size: 4em;
+	font-size: 40px;
 	transform: translate(-50%, -50%);
 	text-align: center;
+	height: 30vh;
 }
 .messageStyle{
-	background: white;
-	padding: 30px;
+	background: rgba(255, 255, 255, 0.762);
+	padding: 70px 30px 30px 30px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-	border-radius: 5%;
+	border-radius: 30px;
 }
 .score {
 	position: fixed;
 	z-index: 10;
-	height: 10vh;
-	font-size: 10vh;
-	font-weight: 100;
+	font-size: 2rem;
 	color: white;
-	-webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-	top: 0;
-	left: 0;
+	top: 1rem;
+	left: 30vw;
 	margin: 10px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 .score_val {
-	color: gold;
+	color: rgb(255, 225, 0);
 	font-weight: bold;
 }
 @media only screen and (max-width: 1080px) {
-    .message{
-		font-size: 50px;
-		top: 50%;
-		white-space: nowrap;
-	}
-	.score{
-		font-size: 8vh;
-	}
+   
 	.bird{
 		width: 120px;
 		height: 90px;

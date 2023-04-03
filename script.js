@@ -1,4 +1,4 @@
-let move_speed = 3, grativy = 0.5;
+let move_speed = 6, grativy = 0.5;
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 let sound_point = new Audio('sounds effect/point.mp3');
@@ -43,8 +43,9 @@ function play(){
         pipe_sprite.forEach((element) => {
             let pipe_sprite_props = element.getBoundingClientRect();
             bird_props = bird.getBoundingClientRect();
-
-            if(pipe_sprite_props.right <= 0){
+            console.log(pipe_sprite_props.right)
+            if(pipe_sprite_props.right <= 310){
+               
                 element.remove();
             }else{
                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
@@ -73,14 +74,14 @@ function play(){
         bird_dy = bird_dy + grativy;
         document.addEventListener('keydown', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
-                img.src = 'images/shark-up.svg';
+                img.src = 'images/shark-up.png';
                 bird_dy = -7.6;
             }
         });
 
         document.addEventListener('keyup', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
-                img.src = 'images/shark-down.svg';
+                img.src = 'images/shark-down.png';
             }
         });
 
@@ -107,22 +108,23 @@ function play(){
 
         if(game_state != 'Play') return;
 
-        if(pipe_seperation > 115){
+        if(pipe_seperation > 70){
             pipe_seperation = 0;
-            let pipe_posi = Math.floor(Math.random() * 31) + 20;
+            let pipe_posi = Math.floor(Math.random() * 35) + 5;
             let pipe_sprite_inv = document.createElement('div');
             pipe_sprite_inv.className = 'pipe_sprite';
             pipe_sprite_inv.style.height = pipe_posi+ 'vh';
-            pipe_sprite_inv.style.left = '100vw';
+            pipe_sprite_inv.style.left = '80vw';
+            pipe_sprite_inv.style.top = '10.5vh';
+            pipe_sprite_inv.style.backgroundPosition =  'bottom';
 
             background_container.appendChild(pipe_sprite_inv);
-            let pipe_bot =Math.floor(Math.random() * 26);
             let pipe_sprite = document.createElement('div');
             pipe_sprite.className = 'pipe_sprite';
-            pipe_sprite.style.height =  80 - pipe_gap+ 'vh';
+            pipe_sprite.style.height =  80 - pipe_gap - pipe_posi + 'vh';
             pipe_sprite.style.backgroundPosition =  'top';
-            pipe_sprite.style.top = pipe_gap + pipe_posi +'vh';
-            pipe_sprite.style.left = '100vw';
+            pipe_sprite.style.bottom ='10.5vh';
+            pipe_sprite.style.left = '80vw';
             pipe_sprite.increase_score = '1';
 
              background_container.appendChild(pipe_sprite);
